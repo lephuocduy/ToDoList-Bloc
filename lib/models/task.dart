@@ -1,35 +1,37 @@
-import 'package:equatable/equatable.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+part 'task.freezed.dart';
 
-class Task extends Equatable {
-  final String title;
-  bool? isDone;
-  bool? isDeleted;
-
-  Task({
-    required this.title,
-    this.isDone,
-    this.isDeleted,
-  }) {
-    isDone = isDone ?? false;
-    isDeleted = isDeleted ?? false;
-  }
-
-  Task copyWith({
-    String? title,
-    bool? isDone,
-    bool? isDeleted,
-  }) {
-    return Task(
-      title: title ?? this.title,
-      isDone: isDone ?? this.isDone,
-      isDeleted: isDeleted ?? this.isDeleted,
-    );
-  }
-
-  @override
-  List<Object?> get props => [
-        title,
-        isDone,
-        isDeleted,
-      ];
+@freezed
+class Task with _$Task {
+  const factory Task({
+    required String title,
+    required bool isDone,
+  }) = _Task;
 }
+
+// class Task extends Equatable {
+//   final String title;
+//   final bool isDone;
+
+//   Task({
+//     required this.title,
+//     this.isDone,
+//   }) {
+//     isDone = isDone ?? false;
+//   }
+
+//   Task copyWith({
+//     String? title,
+//     bool? isDone,
+//   }) {
+//     return Task(
+//       title: title ?? this.title,
+//     );
+//   }
+
+//   @override
+//   List<Object?> get props => [
+//         title,
+//         isDone,
+//       ];
+// }

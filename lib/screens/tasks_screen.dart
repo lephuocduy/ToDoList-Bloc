@@ -16,7 +16,7 @@ class TasksScreen extends StatelessWidget {
                 padding: EdgeInsets.only(
                     bottom: MediaQuery.of(context).viewInsets.bottom),
                 child: AddTaskScreen(
-                  oldTask: Task(title: ''),
+                  oldTask: Task(title: '', isDone: false),
                 ),
               ),
             ));

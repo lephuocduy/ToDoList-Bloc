@@ -44,7 +44,7 @@ class TasksList extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 24,
                         decoration:
-                            task.isDone! ? TextDecoration.lineThrough : null),
+                            task.isDone ? TextDecoration.lineThrough : null),
                   ),
                   Row(
                     children: [
